@@ -2,7 +2,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |name|string|index: true, null: false|
 |email|string|null: false|
 |password|string|null: false, foreign_key: true|
@@ -16,23 +15,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|message|text|index: true, null: false|
+|message|text|index: true|
 |image|string|
 |stamps|timestamp|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|group_name|string|index: true, null: false|
+|name|string|index: true, null: false|
 
 ### Association
 - has_many :messages
@@ -43,7 +40,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 

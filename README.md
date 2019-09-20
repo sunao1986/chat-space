@@ -4,7 +4,7 @@
 |------|----|-------|
 |name|string|index: true, null: false|
 |email|string|null: false|
-|password|string|null: false, foreign_key: true|
+|password|string|null: false|
 
 ### Association
 - has_many :messages
@@ -15,7 +15,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text|index: true|
+|message|text|
 |image|string|
 |stamps|timestamp|null: false|
 |user_id|integer|null: false, foreign_key: true|
@@ -29,7 +29,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index: true, null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :messages

@@ -1,0 +1,190 @@
+.header{
+  height: 20px;
+  width: 100%;
+  background-color: #38AEF0;
+
+  &__message{
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+.contents{
+
+  .contents_side{
+    float: left;
+
+    .side_top{
+      height: 100px;
+      width: 300px;
+      background-color: #253141;
+
+      &__user{
+        float: left;
+        color: $whitecolor;
+        line-height: 100px;
+        font-size: 16px;
+        font-weight:bold;
+        padding-left:20px;
+      }
+      &__icon{
+        float: right;
+        padding-right: 20px;
+
+        &--edit{
+          float: left;
+          color: $whitecolor;
+          line-height: 100px;
+          padding-right: 5px;
+        }
+        &--cog{
+          float: left;
+          color: $whitecolor;
+          line-height: 100px;
+        }
+      }
+    }
+    .side_bottom{
+      height: calc(100vh - 100px);
+      width: 300px;
+      background-color:#2f3e51;
+
+      &__group{
+        color: $whitecolor;
+        font-size: 15px;
+        padding: 20px 0 0 20px;
+      }
+      &__message{
+        color: $whitecolor;
+        font-size: 11px;
+        padding: 5px 0 40px 20px;
+      }
+    }
+  }
+  .contents_main{
+    float:left;
+
+    .main_top{
+      border-bottom: medium solid #eeeeee;
+      height: 100px;
+      width:calc(100vw - 300px);
+      background-color: #fafafa;
+
+      .main_top_left{
+        float: left;
+
+        &__group{
+          padding: 35px 0 0 40px;
+          font-size: 20px;
+          color: #333333;
+          margin: 0 ; 
+        }
+        &__member{
+          padding: 15px 0 6px 40px;
+          font-size: 12px;
+          color: #999999;
+          line-height: 8px;
+        }
+
+      }
+      .main_top_right{
+        float: right;
+
+        &__botton{
+          height: 40px;
+          width: 80px;
+          color: #38AEF0;;
+          border: solid 2px #38AEF0;
+          text-align: center;
+          line-height: 40px;          
+          margin: 30px 40px 30px 40px; 
+
+          &--edit{
+            color: #38AEF0;
+            text-decoration: none; 
+          }
+        }
+      }
+    }
+    .main_bottom{
+      height: calc(100vh - 100px);
+      width: calc(100vw - 300px);
+      background-color: gainsboro;
+      position: relative;
+
+      &__user{
+        font-size: 16px;
+        font-weight:bold;
+        padding: 40px 0 0 40px ;
+        color: #434A54;
+      }
+      &__time{
+        font-size: 12px;
+        color: #999999;
+        padding: 0 0 0 10px;
+
+      }
+      &__message{
+        font-size: 14px;
+        color: #434A54;
+        padding: 10px 0 0 40px;
+
+      }
+    
+      .chatbox{
+        height: 100px;
+        width: 100%;
+        background-color: rgb(167, 163, 163);
+        position: absolute;
+        bottom: 0 ;
+
+        .chatbox_left{
+          height:100%;
+          width: calc(100% - 150px);
+          float:left;
+
+          &__form{
+
+          }
+          &__message{
+            margin: 25px 15px 0 40px;
+            height: 50px;
+            width: calc(100% - 55px);
+            min-width :50px;
+          }
+          #filesend{
+            display: none;
+          }
+          &__icon{
+            position: absolute;
+            top: 45px;
+            left: calc(100% - 240px);
+            right: 0;
+            bottom: 0;
+            padding-left: 40px;
+            cursor: pointer; 
+          }
+        }
+        .chatbox_right{
+          float:right;
+          height: 100%;
+          width: 150px;
+
+          &__botton{
+            position: absolute;
+            height: 54px;
+            width: 110px;
+            background-color: #38AEF0;
+            color: #fff;
+            text-align: center;
+            line-height: 54px;
+            text-decoration: none; 
+            margin-top: 25px;
+          }
+        }
+      }
+    }
+  }
+}

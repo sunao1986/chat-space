@@ -63,10 +63,10 @@
       .chatbox
 
         .chatbox_left
-          %form{:action => "/", :method => "post", :class => "chatbox_left__form"}
-            %input{:type => "text", :name => "title", :value => "   type a message", :class => "chatbox_left__message"}
+          %form{action:"/", method:"post", class:"chatbox_left__form"}
+            %input{type:"text", name:"title", value:"   type a message", class:"chatbox_left__message"}
             %label
-              %input{:type => "file", :name => "image",:id => "filesend"}
+              %input{type:"file", name:"image",id:"filesend"}
               = fa_icon 'image', class: "chatbox_left__icon fa-lg"
         
         .chatbox_right

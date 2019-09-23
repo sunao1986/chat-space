@@ -1,0 +1,74 @@
+.header
+  .header__message
+    グループを作成しました
+
+.contents
+
+  .contents_side
+
+    .side_top
+      .side_top__user
+        test-user
+      .side_top__icon
+        = link_to "", class: "" do 
+          = fa_icon 'edit', class: "side_top__icon--edit"
+        = link_to "", class: "" do 
+          = fa_icon 'cog', class: "side_top__icon--cog"
+
+
+    .side_bottom
+      .side_bottom__group
+        test-group
+      .side_bottom__message
+        さようなら
+      .side_bottom__group
+        sample-group
+      .side_bottom__message
+        hello!
+      .side_bottom__group
+        example
+      .side_bottom__message
+        まだメッセージがありません 
+
+  .contents_main
+
+    .main_top
+
+      .main_top_left
+        .main_top_left__group
+          test-group
+        .main_top_left__member
+          Member : test-user
+
+      .main_top_right
+        .main_top_right__botton
+          = link_to "", class: "main_top_right__botton--edit" do 
+            Edit
+
+
+    .main_bottom
+      .main_bottom__user
+        test-user 
+        %span.main_bottom__time
+          2019/09/21(sat) 13:00:00
+      .main_bottom__message
+        こんにちは！
+      .main_bottom__user
+        test-user 
+        %span.main_bottom__time
+          2019/09/21(sat) 13:00:00
+      .main_bottom__message
+        さようなら
+
+      .chatbox
+
+        .chatbox_left
+          %form{action:"/", method:"post", class:"chatbox_left__form"}
+            %input{type:"text", name:"title", value:"   type a message", class:"chatbox_left__message"}
+            %label
+              %input{type:"file", name:"image",id:"filesend"}
+              = fa_icon 'image', class: "chatbox_left__icon fa-lg"
+        
+        .chatbox_right
+          = link_to "", class: "chatbox_right__botton" do 
+            Send

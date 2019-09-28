@@ -38,7 +38,7 @@ $(function(){
       var html = buildHTML(date);
       $('.messages').append(html);
       $('#message_content').val('');
-      $('input[type="file"]').val(null);
+      $('#message_image').reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(date) {

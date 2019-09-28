@@ -37,8 +37,7 @@ $(function(){
     .done(function(date){  
       var html = buildHTML(date);
       $('.messages').append(html);
-      $('#message_content').val('');
-      $('#message_image').reset();
+      $('#new_message').reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(date) {

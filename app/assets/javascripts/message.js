@@ -1,5 +1,8 @@
 $(function(){
   function buildHTML(message){
+    var img = ""
+    message.image ? img = `<img src="${message.image}">` : img =""
+
     var html = `<div class="message">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
@@ -12,14 +15,15 @@ $(function(){
                   <div class="lower-message">
                     <p class="lower-message__content">
                       ${message.content}
-                    </p>            
+                    </p> 
+                    ${img}         
                   </div>
                 </div>`
     return html;
   }
+
   $('#new_message').on('submit',function(e){
     e.preventDefault();
-    // console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action');
     $.ajax({
@@ -30,16 +34,18 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(date){  //引数はdate
-      // console.log(message.content);ここでjbilderは成功している
+    .done(function(date){  
       var html = buildHTML(date);
-      $('.messages').append(html)
-      $('#new_message').val('')
-      // $().メッセージをスクロールする.animate
-      // $('sendボタンのセレクタ').ボタンが復活するメソッド
+      $('.messages').append(html);
+      $('#message_content').val('');
+      $('input[type="file"]').val(null);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
     })
-    .fail(function() {
+    .fail(function(date) {
       alert('送信に失敗しました');
+    })
+    .always(function(date){
+      $('.form__submit').prop('disabled',false);
     })
   })
 })

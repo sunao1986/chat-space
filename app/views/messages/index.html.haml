@@ -9,8 +9,9 @@
         = @group.name     
       .left-header__members
         .member
+          Member : 
           - @group.group_users.each do |group_user|
-            = "Member : #{group_user.user.name}"
+            = "#{group_user.user.name}"
 
     .right-header
       = link_to  "/groups/#{@group.id}/edit", method: :get , class: "right-header__button" do 
@@ -20,11 +21,10 @@
     = render @messages
 
   .form
-    .form__mesage
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: '   type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+    = form_for [@group, @message] do |f|
+      .text_box
+        = f.text_field :content, class: 'text_box__message', placeholder: 'type a message'
+        = f.label :image, class: 'text_box__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

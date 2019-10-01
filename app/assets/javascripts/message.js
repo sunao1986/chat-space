@@ -38,9 +38,7 @@ $(function(){
       var html = buildHTML(data);      
       $('.messages').append(html);     
       $('#new_message')[0].reset();
-      console.log(text);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
-      
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});     
     })
     .fail(function() {
       alert('送信に失敗しました');

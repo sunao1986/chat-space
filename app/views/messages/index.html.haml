@@ -10,8 +10,8 @@
       .left-header__members
         .member
           Member : 
-          - @group.group_users.each do |group_user|
-            = "#{group_user.user.name}"
+          - @group.users.each do |group_user|
+            = "#{group_user.name}"
 
     .right-header
       = link_to  "/groups/#{@group.id}/edit", method: :get , class: "right-header__button" do 

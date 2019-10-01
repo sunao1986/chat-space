@@ -34,16 +34,16 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(date){  
-      var html = buildHTML(date);
-      $('.messages').append(html);
-      $('#new_message').reset();
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
+    .done(function(data) {  
+      var html = buildHTML(data);      
+      $('.messages').append(html);     
+      $('#new_message')[0].reset();
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});     
     })
-    .fail(function(date) {
+    .fail(function() {
       alert('送信に失敗しました');
     })
-    .always(function(date){
+    .always(function(){
       $('.form__submit').prop('disabled',false);
     })
   })

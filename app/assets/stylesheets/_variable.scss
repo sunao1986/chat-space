@@ -1,3 +1,11 @@
+.clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+
 $white: #FFFFFF;
 $side_blue_dark: #253141;
 $side_header_font: 16px;

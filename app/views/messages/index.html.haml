@@ -7,15 +7,17 @@
     .left-header
       .left-header__title
         = @group.name     
-      .left-header__members
-        .member
-          Member : 
-          - @group.users.each do |group_user|
-            = "#{group_user.name}"
 
     .right-header
-      = link_to  "/groups/#{@group.id}/edit", method: :get , class: "right-header__button" do 
-        Edit
+      .edit
+        = link_to  "/groups/#{@group.id}/edit", method: :get , class: "edit__button" do 
+          Edit
+
+    .member-box
+      .member-box__name.clearfix
+        Member : 
+        - @group.users.each do |group_user|
+          = "#{group_user.name}"
 
   .messages
     = render @messages

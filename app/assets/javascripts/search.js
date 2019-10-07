@@ -18,36 +18,44 @@ $(function(){
 
   function appendMember(name,id) {
     var html = `<div class="chat-group-user crearfix">
-                  <p class="chat-group-user__name">${name}</p>
                   <input name='group[user_ids][]' type='hidden' value='${id}'>
+                  <p class="chat-group-user__name">${name}</p>                 
                   <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id=${id} data-user-name="${name}">削除</div>
                 </div>`
     member_list.append(html);
   }
+
   $("#user-searchfield").on("keyup", function() {
     var input = $("#user-searchfield").val();
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json'
-    })
-    
-    .done(function(users){
-      $("#user-search-result").empty();
-      if (users.length > 0) {
-        users.forEach(function(user) {
-          appendUser(user);
-        });
-      }
-      else {
-        appendMissingUser("一致するユーザーは存在しませんでした");
-      }
-    })
-    .fail(function() {
-      alert('ユーザーの検索に失敗しました');
-    })
+    if (input != ""){
+
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input}, 
+        dataType: 'json'
+      })
+      
+      .done(function(users){
+        $("#user-search-result").empty();
+        if (users.length > 0) {
+          users.forEach(function(user) {
+            appendUser(user);
+          });
+        }
+        else {
+          appendMissingUser("一致するユーザーは存在しませんでした");
+        }
+      })  
+      .fail(function() {
+        alert('ユーザーの検索に失敗しました');
+      })
+    }
+    else {
+      search_list.empty();
+    }
   })
+
   $(".chat-group-form__field--right").on("click", ".user-search-add", function() {
     var name = $(this).data("user-name");
     var id = $(this).data("user-id");    

@@ -5,5 +5,3 @@ json.array! @messages do |message|
   json.user_name message.user.name
   json.id message.id
 end
-======
->>>>>>> 2e6fa159f047695abc84c68d9fbd902569e3e33c

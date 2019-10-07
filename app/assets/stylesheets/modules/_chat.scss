@@ -10,35 +10,49 @@
     height: 100px;
     padding: 0 40px;
     border-bottom: solid 1px #eee;
+    width:100%;
+    position: relative;
     .left-header {
+      height:70px;
+      width:calc(100% - 72px);
       float: left;
       &__title {
         color: #333;
         font-size: 20px;
         margin-top: 35px;
       }
-      &__members {
-        @include flexbox;
-        color: $light_gray;
-        font-size: 12px;
-        margin-top: 15px;
-        .member {
-          display: inline-block;
-          padding-right: 5px;
+    }
+    .right-header {
+      width:72px;
+      height: 70px;      
+      float: right;      
+      padding: 0 20px;
+      .edit{       
+        width:72px;
+        height: 40px;
+        border: 1px solid $light_blue;
+        color: $light_blue;
+        margin-top: 28px;
+        line-height: 40px;
+        text-align: center;
+        &__button {
+          color: $light_blue;
+          text-decoration: none;
         }
       }
     }
-    .right-header {
-      border: 1px solid $light_blue;
-      color: $light_blue;
-      float: right;
-      height: 40px;
-      line-height: 40px;
-      margin-top: 28px;
-      padding: 0 20px;
-      &__button {
-        color: $light_blue;
-        text-decoration: none;
+    .member-box{
+      position: absolute;
+      bottom: 0;
+      width:100%;
+      color: $light_gray;
+      font-size: 12px;
+      word-break: break-all;
+      height:30px;
+      &__name.clearfix{
+        display: inline-block;
+        padding-top:8px;
+        padding-right: 5px;
       }
     }
   }
@@ -51,14 +65,17 @@
     overflow-y: scroll;
     overflow-x: scroll;
     .message {
+      width:282px;
       .upper-message {
         display: flex;
         &__user-name {
+          width:30px;
           color: $black;
           font-size: 16px;
           font-weight: bold;
         }
         &__date {
+          width: 133px;
           color: $light_gray;
           font-size: 12px;
           padding-left: 10px;

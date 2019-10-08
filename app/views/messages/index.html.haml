@@ -16,8 +16,10 @@
     .member-box
       .member-box__name.clearfix
         Member : 
-        - @group.users.each do |group_user|
-          = "#{group_user.name}"
+        = current_user.name
+          - @group.users.each do |user|
+            - unless user == current_user
+            = user.name
 
   .messages
     = render @messages

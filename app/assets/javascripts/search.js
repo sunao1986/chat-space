@@ -60,7 +60,7 @@ $(function(){
     var name = $(this).data("user-name");
     var id = $(this).data("user-id");    
     $(this).parent(".chat-group-user").remove();
-    $("#member-search-result").empty();
+    // $("#member-search-result").empty();
     appendMember(name,id);   
   })
   $(".chat-group-form__field--right").on("click", ".user-search-remove", function() {
